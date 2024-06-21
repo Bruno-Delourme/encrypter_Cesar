@@ -2,12 +2,14 @@
 #include <string.h>
 
 // Fonction pour chiffrer une chaine avec le chiffrement Cesar
-void caesarEncrypt(char* text, int shift) {
+void caesarEncrypt(char* text, int shift)
+        {
     int i;
     char ch;
 
     // Parcourir chaque caractere de la chaine
-    for (i = 0; text[i] != '\0'; ++i) {
+    for (i = 0; text[i] != '\0'; ++i)
+        {
         ch = text[i];
 
         // Verifie si le caractere est une lettre minuscule
@@ -24,12 +26,14 @@ void caesarEncrypt(char* text, int shift) {
 }
 
 // Fonction pour dechiffrer une chaine avec le chiffrement Cesar
-void caesarDecrypt(char* text, int shift) {
+void caesarDecrypt(char* text, int shift)
+        {
     int i;
     char ch;
 
     // Parcourir chaque caractere de la chaine
-    for (i = 0; text[i] != '\0'; ++i) {
+    for (i = 0; text[i] != '\0'; ++i)
+        {
         ch = text[i];
 
         // Verifie si le caractere est une lettre minuscule
@@ -52,20 +56,21 @@ int main() {
 
     // Demande a l'utilisateur de choisir entre chiffrer ou dechiffrer
     printf("Do you want to (e)ncrypt or (d)ecrypt? ");
-    scanf(" %c", &choice); // L'espace avant %c est important pour consommer tout caractère blanc résiduel
+    scanf(" %c", &choice); // L'espace avant %c est important pour consommer tout espace residuel
 
     // Demande a l'utilisateur d'entrer une chaine
     printf("Enter a string: ");
     getchar(); // Pour consommer le saut de ligne résiduel après la saisie du choix
     fgets(text, sizeof(text), stdin);
-    text[strcspn(text, "\n")] = '\0';  // Supprimer le saut de ligne
+    text[strcspn(text, "\n")] = '\0';  // Supprime le saut de ligne
 
     // Demande a l'utilisateur d'entrer le decalage
     printf("Enter shift value: ");
     scanf("%d", &shift);
 
     // Chiffre ou dechiffre la chaine en fonction du choix de l'utilisateur
-    if (choice == 'e') {
+    if (choice == 'e')
+    {
         caesarEncrypt(text, shift);
         printf("Encrypted text: %s\n", text);
     } else if (choice == 'd') {
